@@ -1,4 +1,5 @@
 import torch
+import torchvision.utils
 
 import preprocessData
 import numpy as np
@@ -27,4 +28,8 @@ print(len(batch))
 print(type(batch))
 images, labels = batch
 
+grid = torchvision.utils.make_grid(images,nrow=10)
+plt.figure(figsize=(15,15))
+plt.imshow(np.transpose(grid,(1,2,0)))
+plt.show()
 
