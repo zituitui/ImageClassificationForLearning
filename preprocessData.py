@@ -9,6 +9,8 @@ train_set = torchvision.datasets.FashionMNIST(
     ,transform=transforms.Compose([transforms.ToTensor()])
 )
 
-train_set_loader = torch.utils.data.DataLoader(train_set)
-print(train_set_loader)
-print("load data finished")
+train_set_loader = torch.utils.data.DataLoader(train_set,batch_size=10)
+
+if(__name__ == '__main__'):
+    print(train_set_loader)
+    print("load data finished")
